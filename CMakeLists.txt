@@ -4,7 +4,9 @@ project(earcut_hpp_test)
 add_compile_options(-std=c++11)
 
 find_package(catkin REQUIRED
-  roscpp)
+  roscpp
+  visualization_msgs
+  )
 
 #find_package(Boost REQUIRED COMPONENTS system)
 
@@ -27,7 +29,4 @@ include_directories(
 
 add_executable(earcut_sample src/earcut.cpp)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS}
-
-# target_link_libraries(${PROJECT_NAME}_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(earcut_sample ${catkin_LIBRARIES})
